@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rakuten-rex/icons": "0.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -35,5 +36,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rakuten-rex/button": "^1.5.0",
+    "@rakuten-rex/grid": "1.6.0",
+    "@type/": "rakuten-rex/grid",
+    "@types": "rakuten-rex/button",
+    "@types/": "rakuten-rex/button",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/styled-components": "^5.1.2",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1"
   }
 }
