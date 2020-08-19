@@ -1,6 +1,11 @@
 I build visual parts. not increment functionality.
 some parts that I could not figure out how to use I want your advice.
 
+＊when you want to see the 06 Service Requests 02 Service Requests Overview(empty)<br>
+change the value of "useState()" in containers/Request.tsx<br>
+like so <br>
+`const [hasRequest, setHasRequest] = useState(false);`
+
 page design
 https://xd.adobe.com/view/bd4b0c59-a822-4732-61b9-89c0047ff645-cb7a/
 
