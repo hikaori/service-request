@@ -38,6 +38,7 @@ const Label: React.SFC<OwnProps> = ({ status }) => {
       case "確認中":
         return <LabelSpan className={"green"}>{status}</LabelSpan>;
       case "返信あり":
+      case "OPEN":
         return <LabelSpan className={"orange"}>{status}</LabelSpan>;
       case "完了":
         return <LabelSpan className={"gray"}>{status}</LabelSpan>;

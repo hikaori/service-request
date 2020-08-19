@@ -1,9 +1,9 @@
 import React, {  useState, useEffect, Fragment } from "react";
 import styled from "styled-components";
 import BaseContainer from './BaseContainer'
-import { NewRequestButton } from "../components/Buton";
-import NoFoundRequest from "../components/NoFoundRequest";
-import FoundRequest from "../components/FoundRequest";
+import SendButton  from "../components/SendButton";
+import DynamicEmptyTable from "./DynamicEmptyTable";
+import DynamicTable2 from "../components/DynamicTable2";
 import ShowedRestNumInfo from "../components/ShowedRestNumInfo";
 import sampleRequests from "../sampleRequests";
 
@@ -30,7 +30,7 @@ function Outer() {
         <h2>お問い合わせ</h2>
         {hasRequest ? (
           <InlineDivRight>
-            <NewRequestButton />
+            <SendButton　to="/create-request" text="新規お問い合わせ"/>
           </InlineDivRight>
         ) : (
           <div />
@@ -42,13 +42,13 @@ function Outer() {
       </FlexDiv>
       {hasRequest ? (
         <Fragment>
-          <FoundRequest requests={sampleRequests} />
+          <DynamicTable2 requests={sampleRequests} />
           <div>
             <ShowedRestNumInfo totalNum={REQUEST_TOTAL} />
           </div>
         </Fragment>
       ) : (
-        <NoFoundRequest />
+        <DynamicEmptyTable />
           )}
     </BaseContainer>
   );

@@ -4,14 +4,8 @@ import styled from "styled-components";
 
 import BaseContainer from './BaseContainer'
 import CreateRequestForm from '../components/CreateRequestForm'
-import { SendButton} from '../components/Buton'
+import SendButton from '../components/SendButton'
 
-const { Row, Col } = require('@rakuten-rex/grid/Grid');
-
-const CenterCol = styled(Col)`
-  display: flex;
-  align-items:center
-`;
 const FlexDiv = styled.div`
   display:flex;
   align-items: center;
@@ -27,9 +21,9 @@ function CreateRequest() {
     <BaseContainer>
         <h2>新規お問い合わせ</h2>
         <div>お問い合わせの前に<a href="/">よくあるご質問</a>をご確認ください。</div>
-        <CreateRequestForm/>
+      <CreateRequestForm/>
       <FlexDiv>
-        <div className="content"><SendButton/></div>
+        <div className="content"><SendButton to="/create-request/confirm" text="送信"/></div>
         <div className="content"><Link to="/">キャセル</Link></div>
       </FlexDiv>  
     </BaseContainer>

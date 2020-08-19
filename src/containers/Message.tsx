@@ -1,25 +1,38 @@
-import React, { useContext} from "react";
+import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import BaseContainer from "./BaseContainer";
-import { useParams } from "react-router-dom"
-import reducer from "../reducers"
-import AppContext from '../contexts/AppContext';
+import Label from "../components/Label"
+import MessageCustomerArea from "../components/MessageCustomerArea"
+import MessageRakutenArea from "../components/MessageRakutenArea"
+import MessageReply from "../components/MessageReply"
+import SendButton from '../components/SendButton'
+
+
+const FlexDiv = styled.div`
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  & .content{
+    margin:0 1rem;
+  }
+`
 
 function Message() {
-  // const initialState = { inputValue: '', selectedValue: '', clickCount: 0 }
-
-  // const [state, dispatch] = useReducer(reducer, initialState)
-
-  let { id } = useParams();
-  const value = useContext(AppContext);
-
-  
   return (
     <BaseContainer>
-      <h1>{value}</h1>
-      <h2>title</h2>
-      {/* <div>state:{state.inputValue}</div> */}
-          {id}
+      <h1>eSIMプロファイル設定<Label status="OPEN" /></h1>
+      <MessageCustomerArea message="テキストテキスト" day="2020/05/02,3:45 pm"/>
+      <div>回答2件</div>
+      <MessageRakutenArea message="テキストテキスト" day="2020/05/02,3:45 pm" />
+      <MessageCustomerArea message="テキストテキスト" day="2020/05/02,3:45 pm" />
+      <div>返信</div>
+      <MessageReply />
+      <FlexDiv>
+      <div className="content"><SendButton to ="/message/send" text="送信"/></div>
+        <div className="content"><Link to="/message/solved">解決済み</Link></div>
+      </FlexDiv>
+
     </BaseContainer>
   );
 };

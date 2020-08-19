@@ -1,6 +1,6 @@
 import React from "react";
-import RowRequestTitle from "./RowRequestTitle";
-import RowRequest from "./RowRequest";
+import DynamicTable2Title from "./DynamicTable2Title";
+import DynamicTable2Row from "./DynamicTable2Row";
 import { RequestType } from "../types/requestType";
 
 interface OwnProps {
@@ -10,9 +10,9 @@ interface OwnProps {
 const FoundRequest: React.SFC<OwnProps> = ({ requests }) => {
   return (
     <div>
-      <RowRequestTitle />
+      <DynamicTable2Title />
       {requests.map((item, index) => {
-        return <RowRequest key={index} request={item} />;
+        return <DynamicTable2Row key={index} request={item} />;
       })}
     </div>
   );
